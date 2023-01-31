@@ -1,7 +1,12 @@
-﻿namespace Data
-{
-    public class Class1
-    {
+﻿using Microsoft.EntityFrameworkCore;
 
+namespace Data
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext()
+        {
+
+        }
     }
 }

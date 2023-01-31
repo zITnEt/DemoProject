@@ -10,7 +10,7 @@ namespace DemoDomain.Entity
     {
         public int Id { get; set; }
 
-        public int LifeTime { get; set; }
+        public Lifetime Lifetime { get; set; }
 
         public double Summ { get; set; }
 
