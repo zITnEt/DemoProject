@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace DemoDomain.Entity
 {
-    public class Product
+    public class User
     {
         public int Id { get; set; }
-
+        public Role Role { get; set; }
         public string? Name { get; set; }
 
-        public int CategoryId { get; set; }
-        public Category? Category { get; set; }
+        public string PasswordHash { get; set; }
+        public string Email { get; set; }
+        public double? Balance { get; set; }
     }
 }

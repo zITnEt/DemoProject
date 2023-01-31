@@ -5,6 +5,7 @@ using DemoApplication.Services;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
+using DemoDomain.Entity;
 
 namespace Auth.Dars1.Services
 {
@@ -17,13 +18,14 @@ namespace Auth.Dars1.Services
             _configuration = configuration;
         }
 
-        public string Generate(string username)
+        public string Generate(User user)
         {
             var claims = new Claim[]
             {
-                new Claim(JwtRegisteredClaimNames.Name, username),
+                new Claim(JwtRegisteredClaimNames.Name, user.Name),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString())
+                new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
+                new Claim("Role", user.Role.ToString())
             };
 
             var credentials = new SigningCredentials(

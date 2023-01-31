@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoDomain.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace DemoApplication.Services
 {
     public interface ITokenService
     {
-        string Generate(string username);
+        string Generate(User user);
     }
 }

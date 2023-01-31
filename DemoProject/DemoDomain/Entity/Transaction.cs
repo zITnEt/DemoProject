@@ -11,12 +11,12 @@ namespace DemoDomain.Entity
         public int Id { get; set; }
 
         public int ProductStoreId { get; set; }
-        public ProductStore ProductStore { get; set; }
+        public ProductStore? ProductStore { get; set; }
 
         public double Summ { get; set; }
 
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public User? Customer { get; set; }
 
         public DateTime CreateDate { get; set; }
     }

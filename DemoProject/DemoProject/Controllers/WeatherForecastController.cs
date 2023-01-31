@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoProject.Controllers
@@ -18,6 +19,7 @@ namespace DemoProject.Controllers
             _logger = logger;
         }
 
+        [Authorize(Policy ="Customer")]
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {

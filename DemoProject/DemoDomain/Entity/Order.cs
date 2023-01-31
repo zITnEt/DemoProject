@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,13 @@ namespace DemoDomain.Entity
         public double TotalSumm { get; set; }
 
         public int DebtId { get; set; }
-        public Debt Debt { get; set; }
 
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public User? Customer { get; set; }
 
         public DateTime CreateDate { get; set; }
 
         public int ProductStoreId { get; set; }
-        public ProductStore ProductStore { get; set; }
+        public ProductStore? ProductStore { get; set; }
     }
 }
